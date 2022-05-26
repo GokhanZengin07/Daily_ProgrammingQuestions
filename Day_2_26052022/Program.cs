@@ -26,7 +26,7 @@ class Result
     {
         int rowsLength = arr.Count();
         int columnsLength = arr[0].Count();
-        int sumTemp = 0;
+        int sumTemp=int.MinValue;
 
         for (int i = 0; i < rowsLength-2; i++)
         {
@@ -36,7 +36,8 @@ class Result
                 sumTemp = Math.Max(sumCurrent, sumTemp);
             }
         }
-        
+        Console.WriteLine(sumTemp);
+        Console.ReadLine();
         return sumTemp;
     }
 
@@ -46,7 +47,7 @@ class Solution
 {
     public static void Main(string[] args)
     {
-        // TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+        //TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
 
         List<List<int>> arr = new List<List<int>>();
 
@@ -57,9 +58,9 @@ class Solution
 
         int result = Result.hourglassSum(arr);
 
-     /*   textWriter.WriteLine(result);
+     // textWriter.WriteLine(result);
 
-        textWriter.Flush();
-        textWriter.Close();*/
+     //   textWriter.Flush();
+       // textWriter.Close();
     }
 }
